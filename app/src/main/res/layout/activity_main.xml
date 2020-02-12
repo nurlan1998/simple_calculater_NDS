@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/darker_gray"
+    android:padding="8dp"
+    tools:context=".MainActivity">
+
+<LinearLayout
+    android:layout_margin="8dp"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+<TextView
+    android:text="Сумма"
+    android:textColor="@android:color/black"
+    android:textStyle="bold"
+    android:textSize="15sp"
+    android:layout_weight="0"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content" />
+
+    <EditText
+        android:id="@+id/edAmount"
+
+        android:gravity="right"
+        android:inputType="number"
+        android:maxLines="1"
+        android:lines="1"
+        android:layout_weight="1"
+        android:singleLine="true"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
+<LinearLayout
+    android:layout_margin="8dp"
+    android:padding="8dp"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+<TextView
+    android:textSize="15sp"
+    android:textStyle="bold"
+    android:textColor="@android:color/black"
+    android:text="НДС %"
+    android:layout_weight="0"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content" />
+
+    <EditText
+        android:id="@+id/edNds"
+        android:inputType="number"
+        android:layout_weight="1"
+        android:singleLine="true"
+        android:gravity="right"
+        android:maxLines="1"
+        android:lines="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_margin="8dp"
+        android:padding="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/markNds"
+            android:textSize="15sp"
+            android:onClick="onRadioButtonClicked"
+            android:textStyle="bold"
+            android:text="Выделить НДС"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <RadioButton
+            android:onClick="onRadioButtonClicked"
+            android:id="@+id/chargeNds"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:text="Начислять НДС"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_margin="8dp"
+        android:padding="8dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="15sp"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:text="Сумма без НДС "
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" />
+
+        <TextView
+            android:id="@+id/onNds"
+            android:textColor="@android:color/black"
+            android:text="0,00"
+            android:layout_weight="0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_margin="8dp"
+        android:textColor="@android:color/black"
+        android:padding="8dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:text="Сумма НДС"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" />
+
+        <TextView
+            android:id="@+id/nds"
+            android:text="0,00"
+            android:textColor="@android:color/black"
+            android:layout_weight="0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_margin="8dp"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:text="Всего с НДС"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" />
+
+        <TextView
+            android:id="@+id/amountWithNds"
+            android:text="0,00"
+            android:textColor="@android:color/black"
+            android:layout_weight="0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:text="Очистить"
+        android:background="#00574B"
+        android:layout_margin="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="center_horizontal"
+        android:onClick="clearOnClick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
